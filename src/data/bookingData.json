@@ -1,0 +1,196 @@
+{
+  "mainServices": {
+    "suv": {
+      "interior": {
+        "basic": {
+          "name": "Basic Interior",
+          "price": 180,
+          "includes": [
+            "Vacuum Carpets & Floor Mats",
+            "Wipe Down Dashboard, Console & Cupholders",
+            "Clean Windows (Inside)",
+            "Clean Door Panels & Pockets",
+            "Light Dusting",
+            "Air Freshener"
+          ]
+        },
+        "premium": {
+          "name": "Premium Interior",
+          "price": 220,
+          "includes": [
+            "Full Vacuum Carpets, Mats & Seats",
+            "Shampoo & Deep Clean Upholstery + Carpets",
+            "Leather/Vinyl Cleaning & Conditioning",
+            "Dashboard, Console & Trim Detailed",
+            "Interior Windows & Mirrors",
+            "Door Panels & Cupholders Sanitized",
+            "Odor Elimination"
+          ]
+        }
+      },
+      "exterior": {
+        "basic": {
+          "name": "Basic Exterior",
+          "price": 160,
+          "includes": [
+            "Biodegradable Soap Wash",
+            "Rinse & Pressure Clean",
+            "Hand Dry with Microfiber Towels",
+            "Clean Windows & Mirrors (Outside)",
+            "Basic Tire Shine"
+          ]
+        },
+        "premium": {
+          "name": "Premium Exterior",
+          "price": 190,
+          "includes": [
+            "Foam Cannon Wash",
+            "Clay Bar Treatment",
+            "Hand Wax/Sealant",
+            "Windows & Mirrors Polished",
+            "Wheel & Tire Deep Cleaning + Shine",
+            "Bug & Tar Removal"
+          ]
+        }
+      },
+      "full": {
+        "basic": {
+          "name": "Basic Full",
+          "price": 220,
+          "includes": ["Basic Interior + Basic Exterior Packages"]
+        },
+        "premium": {
+          "name": "Premium Full",
+          "price": 300,
+          "includes": ["Premium Interior + Premium Exterior Packages"]
+        }
+      }
+    },
+
+    "sedan": {
+      "interior": {
+        "basic": { "name": "Basic Interior", "price": 190, "includes": ["..."] },
+        "premium": { "name": "Premium Interior", "price": 230, "includes": ["..."] }
+      },
+      "exterior": {
+        "basic": { "name": "Basic Exterior", "price": 170, "includes": ["..."] },
+        "premium": { "name": "Premium Exterior", "price": 200, "includes": ["..."] }
+      },
+      "full": {
+        "basic": { "name": "Basic Full", "price": 230, "includes": ["..."] },
+        "premium": { "name": "Premium Full", "price": 310, "includes": ["..."] }
+      }
+    },
+
+    "truck": {
+      "interior": {
+        "basic": { "name": "Basic Interior", "price": 180, "includes": ["..."] },
+        "premium": { "name": "Premium Interior", "price": 220, "includes": ["..."] }
+      },
+      "exterior": {
+        "basic": { "name": "Basic Exterior", "price": 190, "includes": ["..."] },
+        "premium": { "name": "Premium Exterior", "price": 210, "includes": ["..."] }
+      },
+      "full": {
+        "basic": { "name": "Basic Full", "price": 250, "includes": ["..."] },
+        "premium": { "name": "Premium Full", "price": 320, "includes": ["..."] }
+      }
+    },
+
+    "van": {
+      "interior": {
+        "basic": { "name": "Basic Interior", "price": 210, "includes": ["..."] },
+        "premium": { "name": "Premium Interior", "price": 240, "includes": ["..."] }
+      },
+      "exterior": {
+        "basic": { "name": "Basic Exterior", "price": 190, "includes": ["..."] },
+        "premium": { "name": "Premium Exterior", "price": 240, "includes": ["..."] }
+      },
+      "full": {
+        "basic": { "name": "Basic Full", "price": 220, "includes": ["..."] },
+        "premium": { "name": "Premium Full", "price": 300, "includes": ["..."] }
+      }
+    },
+
+    "bike": {
+      "full": {
+        "basic": {
+          "name": "Bike Full Detailing",
+          "price": 170,
+          "includes": ["Pressure Rinse Frame, Tank, Fenders", "..."]
+        }
+      }
+    },
+
+    "boat": {
+      "interior": {
+        "name": "Boat Interior",
+        "pricePerFt": 19,
+        "includes": ["Vacuum Carpets, Seats & Storage", "..."]
+      },
+      "exterior": {
+        "name": "Boat Exterior",
+        "pricePerFt": 23,
+        "includes": ["Pressure Rinse Hull & Deck", "..."]
+      },
+      "full": {
+        "name": "Boat Full",
+        "pricePerFt": 35,
+        "includes": ["Full Interior + Full Exterior Packages"]
+      }
+    },
+
+    "jetski": {
+      "full": {
+        "name": "Jet Ski Full Detailing",
+        "price": 220,
+        "includes": ["Pressure Rinse Hull & Body", "..."]
+      }
+    },
+
+    "rv": {
+      "interior": {
+        "name": "RV Interior",
+        "pricePerFt": 25,
+        "includes": ["Vacuum Carpets, Upholstery & Floors", "..."]
+      },
+      "exterior": {
+        "name": "RV Exterior",
+        "pricePerFt": 25,
+        "includes": ["Pressure Wash Roof, Sides & Awning", "..."]
+      },
+      "full": {
+        "name": "RV Full",
+        "pricePerFt": 40,
+        "includes": ["Full Interior + Full Exterior Packages"]
+      }
+    }
+  },
+
+  "extraServices": {
+    "windowtinting": {
+      "centurionsides": { "name": "Centurion Tint - Sides each window", "price": 69 },
+      "centurionrear": { "name": "Centurion Tint - Rear windshield", "price": 99 },
+      "centurionfront": { "name": "Centurion Tint - Front windshield", "price": 155 },
+      "centurionbrow": { "name": "Centurion Tint - Brow", "price": 60 },
+      "centurionroof": { "name": "Centurion Tint - Roof window", "price": 79 },
+      "ceramiccenturionsides": { "name": "Ceramic Centurion Tint - Sides each window", "price": 89 },
+      "ceramiccenturionrear": { "name": "Ceramic Centurion Tint - Rear windshield", "price": 119 },
+      "ceramiccenturionfront": { "name": "Ceramic Centurion Tint - Front windshield", "price": 200 },
+      "ceramiccenturionbrow": { "name": "Ceramic Centurion Tint - Brow", "price": 79 },
+      "ceramiccenturionroof": { "name": "Ceramic Centurion Tint - Roof", "price": 99 }
+    },
+    "ceramiccoating": {
+      "oneYear": { "name": "Ceramic Coating (1 Year)", "price": 379 },
+      "fiveYear": { "name": "Ceramic Coating (5 Years)", "price": 579 },
+      "tenYear": { "name": "Ceramic Coating (10 Years)", "price": 779 }
+    }
+  },
+
+  "additionalServices": [
+    { "id": "odor_removal", "name": "Odor Removal", "price": 50 },
+    { "id": "pet_hair", "name": "Pet Hair Removal", "price": 40 },
+    { "id": "engine_cleaning", "name": "Engine Cleaning", "price": 70 },
+    { "id": "headlight_restore", "name": "Headlight Restoration", "price": 60 }
+  ]
+}
