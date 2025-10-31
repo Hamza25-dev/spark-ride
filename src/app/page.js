@@ -34,17 +34,17 @@ export default function Home() {
     {
       title: "Ceramic Coating",
       description: "Protect your car's paint with our premium ceramic coating service.",
-      image: "/images/ceramic-coating.jpg", // Placeholder image path
+      image: "/images/CeramicCoating.jpg",
     },
     {
       title: "Window Tint",
       description: "Enhance privacy and reduce heat with professional window tinting.",
-      image: "/images/window-tint.jpg",
+      image: "/images/WindowTint.jpg",
     },
     {
       title: "Interior Detailing",
       description: "Deep clean and restore your car's interior to showroom condition.",
-      image: "/images/interior-detailing.jpg",
+      image: "/images/InteriorCleaningAfter.png",
     },
   ];
 

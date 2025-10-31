@@ -3,87 +3,47 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
-import bookingData from '@/data/bookingData.json';
-import CarWindowTinting from '@/app/images/CarWindowTinting.jpg';
-import WindowTintingBefore from '@/app/images/WindowTintingBefore.png';
-import WindowTintingAfter from '@/app/images/WindowTintingAfter.png';
-import TintedAutoGlass from '@/app/images/TintedAutoGlass.jpg';
-import TintedAutoGlass2 from '@/app/images/TintedAutoGlass2.jpg';
-import TintGlassWindow from '@/app/images/TintGlassWindow.jpeg';
-import TintingFeatures from '@/app/images/TintingFeatures.jpg';
+import { mainServices } from '@/data/booking-service';
+import CarDetailing from '@/app/images/CarDetailing.jpg';
+import CarDetailingAfter from '@/app/images/CarDetailingAfter.png';
+import CarDetailingBefore from '@/app/images/CarDetailingBefore.png';
+import SedanDetailingWash from '@/app/images/SedanDetailingWash.jpeg';
+import SUVDetailing from '@/app/images/SUVDetailing.jpeg';
+import InteriorCleaningAfter from '@/app/images/InteriorCleaningAfter.png';
+import InteriorCleaningBefore from '@/app/images/InteriorCleaningBefore.png';
 
-const TintingPage = () => {
+const FullDetailingPage = () => {
   const benefits = [
     {
-      title: "UV Protection",
-      description: "Blocks up to 99% of harmful UV rays, protecting you and your vehicle's interior from sun damage.",
-      icon: "☀️"
+      title: "Complete Restoration",
+      description: "From paint correction to interior deep cleaning, we restore your vehicle to showroom condition.",
+      icon: "🔄"
     },
     {
-      title: "Heat Reduction",
-      description: "Reduces interior temperature by up to 60%, keeping your car cooler and more comfortable.",
-      icon: "🌡️"
+      title: "Protection & Shine",
+      description: "Apply protective coatings and sealants for long-lasting shine and protection.",
+      icon: "✨"
     },
     {
-      title: "Privacy & Security",
-      description: "Enhances privacy while making it harder for thieves to see inside your vehicle.",
-      icon: "🔒"
+      title: "Interior & Exterior",
+      description: "Comprehensive cleaning and detailing for both interior and exterior surfaces.",
+      icon: "🧼"
     },
     {
-      title: "Glare Reduction",
-      description: "Reduces glare from headlights and sunlight, improving driving safety and comfort.",
-      icon: "👁️"
+      title: "Expert Techniques",
+      description: "Professional detailing using industry-leading products and techniques.",
+      icon: "🛠️"
     }
   ];
 
-  const packages = [
-    {
-      id: "centurion-tint",
-      name: "Centurion Tint Package",
-      price: "From $69/window",
-      duration: "2-3 hours",
-      features: [
-        "Premium Centurion film",
-        "UV protection",
-        "Heat reduction",
-        "5-year warranty",
-        "Lifetime bubble warranty"
-      ]
-    },
-    {
-      id: "ceramic-centurion",
-      name: "Ceramic Centurion Package",
-      price: "From $89/window",
-      duration: "3-4 hours",
-      features: [
-        "Ceramic Centurion film",
-        "Enhanced UV protection",
-        "Superior heat rejection",
-        "7-year warranty",
-        "Lifetime bubble warranty"
-      ]
-    },
-    {
-      id: "full-vehicle-tint",
-      name: "Full Vehicle Tint",
-      price: "Custom Quote",
-      duration: "4-6 hours",
-      features: [
-        "All windows tinted",
-        "Premium ceramic film",
-        "Complete privacy package",
-        "10-year warranty",
-        "Professional installation"
-      ]
-    }
-  ];
-
-  const tintLevels = [
-    { percentage: "5%", visibility: "Very Light", bestFor: "Maximum visibility, minimal tint" },
-    { percentage: "20%", visibility: "Light", bestFor: "Balance of privacy and visibility" },
-    { percentage: "35%", visibility: "Medium", bestFor: "Good privacy, heat reduction" },
-    { percentage: "50%", visibility: "Dark", bestFor: "Maximum privacy, heat blocking" }
-  ];
+  const fullDetailingService = mainServices.find(service => service.id === 'full-detailing');
+  const packages = fullDetailingService ? fullDetailingService.packages.map(pkg => ({
+    id: pkg.id,
+    name: pkg.name,
+    price: `$${pkg.price}`,
+    duration: pkg.id.includes('basic') ? "3-4 hours" : "4-5 hours",
+    features: pkg.includes
+  })) : [];
 
   return (
     <div className="min-h-screen bg-[var(--charcoal-bg)] text-[var(--white-color)]">
@@ -91,8 +51,8 @@ const TintingPage = () => {
       <section className="relative py-20 px-6">
         <div className="absolute inset-0">
           <Image
-            src={CarWindowTinting}
-            alt="Window Tinting Hero"
+            src={CarDetailing}
+            alt="Full Detailing Hero"
             fill
             className="object-cover"
             priority
@@ -102,11 +62,11 @@ const TintingPage = () => {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[var(--text-color)]">
-            Window Tinting
+            Full Detailing
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-            Professional window tinting services that provide privacy, protection, and style.
-            Experience the perfect balance of comfort and sophistication.
+            Transform your vehicle with our comprehensive full detailing services.
+            Experience unmatched care and restoration that brings back the showroom shine.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-[var(--text-color)] text-black hover:bg-[var(--text-color)]/80 px-8 py-3 text-lg">
@@ -119,43 +79,42 @@ const TintingPage = () => {
         </div>
       </section>
 
-      {/* What is Window Tinting */}
+      {/* What is Full Detailing */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-6 text-[var(--text-color)]">
-                What is Window Tinting?
+                What is Full Detailing?
               </h2>
               <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                Window tinting is the application of a thin film to your vehicle's windows that provides
-                numerous benefits while maintaining visibility. Our professional installation ensures
-                perfect adhesion and crystal-clear results.
+                Full detailing is a comprehensive service that restores and protects your vehicle from top to bottom.
+                Our expert technicians use professional-grade products and techniques to bring your car back to its original glory.
               </p>
               <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                Using premium ceramic films, we block harmful UV rays, reduce heat buildup, and provide
-                enhanced privacy without compromising safety or legal requirements.
+                From exterior paint correction and ceramic coating to deep interior cleaning and protection,
+                we ensure every inch of your vehicle receives the attention it deserves.
               </p>
               <div className="bg-[var(--dark-bg-2)] border border-gray-700 rounded-xl p-6">
                 <h3 className="text-xl font-semibold text-[var(--text-color)] mb-3">
-                  Why Choose Professional Tinting?
+                  Key Benefits
                 </h3>
                 <ul className="text-gray-300 space-y-2">
                   <li className="flex items-center">
                     <span className="text-[var(--text-color)] mr-3">•</span>
-                    <span>Perfect, bubble-free installation</span>
+                    <span>Restores showroom condition</span>
                   </li>
                   <li className="flex items-center">
                     <span className="text-[var(--text-color)] mr-3">•</span>
-                    <span>Premium ceramic films for durability</span>
+                    <span>Protects against environmental damage</span>
                   </li>
                   <li className="flex items-center">
                     <span className="text-[var(--text-color)] mr-3">•</span>
-                    <span>Legal compliance in all states</span>
+                    <span>Increases resale value</span>
                   </li>
                   <li className="flex items-center">
                     <span className="text-[var(--text-color)] mr-3">•</span>
-                    <span>Lifetime warranty on installation</span>
+                    <span>Long-lasting shine and protection</span>
                   </li>
                 </ul>
               </div>
@@ -163,8 +122,8 @@ const TintingPage = () => {
 
             <div className="relative">
               <Image
-                src={TintGlassWindow}
-                alt="Professional Window Tinting Application"
+                src={SedanDetailingWash}
+                alt="Professional Full Detailing"
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-2xl"
@@ -174,38 +133,11 @@ const TintingPage = () => {
         </div>
       </section>
 
-      {/* Tint Levels */}
+      {/* Benefits Grid */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-color)]">
-            Choose Your Tint Level
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {tintLevels.map((level, index) => (
-              <Card key={index} className="bg-[var(--dark-bg-2)] border border-gray-700 hover:border-[var(--text-color)] transition-all duration-300 text-center">
-                <CardContent className="p-6">
-                  <div className="text-3xl font-bold text-[var(--text-color)] mb-2">
-                    {level.percentage}
-                  </div>
-                  <h3 className="text-xl font-semibold text-[var(--white-color)] mb-2">
-                    {level.visibility}
-                  </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {level.bestFor}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Grid */}
-      <section className="py-16 px-6 bg-[var(--dark-bg-1)]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-color)]">
-            Benefits of Window Tinting
+            Why Choose Full Detailing?
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -227,10 +159,10 @@ const TintingPage = () => {
       </section>
 
       {/* Packages */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-[var(--dark-bg-1)]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-color)]">
-            Window Tinting Packages
+            Full Detailing Packages
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -258,7 +190,7 @@ const TintingPage = () => {
                     ))}
                   </ul>
 
-                  <Link href={`/bookingform?mainService=window-tinting&package=${pkg.id}`}>
+                  <Link href={`/bookingform?mainService=full-detailing&package=${pkg.id}`}>
                     <Button className="w-full bg-[var(--text-color)] text-black hover:bg-[var(--text-color)]/80 mt-auto">
                       Choose Package
                     </Button>
@@ -271,10 +203,10 @@ const TintingPage = () => {
       </section>
 
       {/* Process */}
-      <section className="py-16 px-6 bg-[var(--dark-bg-1)]">
+      <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-[var(--text-color)]">
-            Our Tinting Process
+            Our Full Detailing Process
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -286,10 +218,10 @@ const TintingPage = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-[var(--white-color)] mb-2">
-                      Consultation & Measurement
+                      Initial Assessment
                     </h3>
                     <p className="text-gray-300">
-                      Discuss your needs and precisely measure your windows for perfect fit.
+                      Thorough inspection of your vehicle to plan the detailing process.
                     </p>
                   </div>
                 </div>
@@ -300,10 +232,10 @@ const TintingPage = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-[var(--white-color)] mb-2">
-                      Surface Preparation
+                      Exterior Detailing
                     </h3>
                     <p className="text-gray-300">
-                      Clean and prepare windows for optimal film adhesion.
+                      Wash, clay bar, paint correction, and protective coatings.
                     </p>
                   </div>
                 </div>
@@ -314,10 +246,10 @@ const TintingPage = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-[var(--white-color)] mb-2">
-                      Professional Installation
+                      Interior Detailing
                     </h3>
                     <p className="text-gray-300">
-                      Expert application ensuring bubble-free, perfect results.
+                      Deep cleaning of all interior surfaces and materials.
                     </p>
                   </div>
                 </div>
@@ -328,10 +260,10 @@ const TintingPage = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-[var(--white-color)] mb-2">
-                      Quality Inspection
+                      Final Inspection
                     </h3>
                     <p className="text-gray-300">
-                      Final check and care instructions provided.
+                      Quality check and delivery with maintenance recommendations.
                     </p>
                   </div>
                 </div>
@@ -340,8 +272,8 @@ const TintingPage = () => {
 
             <div className="relative">
               <Image
-                src={TintingFeatures}
-                alt="Window Tinting Process"
+                src={SUVDetailing}
+                alt="Full Detailing Process"
                 width={600}
                 height={400}
                 className="rounded-2xl shadow-2xl"
@@ -352,17 +284,17 @@ const TintingPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-[var(--dark-bg-1)]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-[var(--text-color)]">
-            Ready to Enhance Your Vehicle?
+            Ready to Transform Your Vehicle?
           </h2>
           <p className="text-gray-300 mb-8 text-lg">
-            Don't wait for the sun to damage your interior. Protect your vehicle today with our professional window tinting services.
+            Experience the ultimate in vehicle care with our professional full detailing services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-[var(--text-color)] text-black hover:bg-[var(--text-color)]/80 px-8 py-3 text-lg">
-              Book Window Tinting
+              Book Full Detailing
             </Button>
             <Button
               variant="outline"
@@ -377,4 +309,4 @@ const TintingPage = () => {
   );
 };
 
-export default TintingPage;
+export default FullDetailingPage;

@@ -61,13 +61,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Animated Water Ripple Effect */}
-      <motion.div
-        className="absolute bottom-0 left-0 w-full h-[120px] bg-[url('/ripple.svg')] bg-repeat-x opacity-70"
-        animate={{ backgroundPositionX: ["0%", "100%"] }}
-        transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-      ></motion.div>
-
       {/* Floating Elements */}
       <motion.div
         className="absolute top-20 left-10 w-20 h-20 bg-[var(--text-color)]/20 rounded-full blur-xl"

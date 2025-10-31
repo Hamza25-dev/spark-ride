@@ -19,11 +19,11 @@ export default function ServiceSection() {
     },
     {
       id: 2,
-      title: "Paint Correction",
+      title: "Full Detailing",
       description:
-        "Transform your vehicle's appearance with our professional paint correction services. Using advanced techniques and premium compounds, we remove swirl marks, scratches, oxidation, and imperfections to reveal the true depth and clarity of your paint. Achieve a showroom-quality finish that lasts.",
+        "Experience the ultimate transformation with our comprehensive full detailing service. From exterior paint correction and ceramic coating to deep interior cleaning and protection, we restore your vehicle to showroom condition. Every surface, every detail, every inch gets our expert attention.",
       image: LightGreen,
-      features: ["Compound & polish process", "Scratch & swirl removal", "Clear coat restoration", "Enhanced gloss & depth"],
+      features: ["Interior & exterior detailing", "Paint correction included", "Ceramic coating application", "Complete vehicle restoration"],
     },
     {
       id: 3,
@@ -122,10 +122,15 @@ export default function ServiceSection() {
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
                 <Link
-                  href="/services"
+                  href={
+                    service.id === 1 ? "/cermaiccoating" :
+                    service.id === 2 ? "/fulldetailing" :
+                    service.id === 3 ? "/tinting" :
+                    "/services"
+                  }
                   className="inline-block bg-[var(--text-color)] text-[var(--dark-black)] px-8 py-3 rounded-full font-semibold hover:bg-[var(--text-color)]/90 hover:scale-105 transition-all duration-300 shadow-lg"
                 >
-                  Learn More
+                  See More
                 </Link>
               </motion.div>
             </div>

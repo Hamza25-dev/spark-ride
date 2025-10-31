@@ -112,6 +112,36 @@ export const serviceTypes = [
       { id: "bike-full", name: "Bike Full Detailing", price: 170, includes: ["Pressure Rinse Frame, Tank, Fenders", "..."] }
     ],
     additionalServices: []
+  },
+  {
+    id: "car-wash",
+    name: "Car Wash",
+    vehicleTypes: ["sedan", "suv", "truck", "van"],
+    packages: [
+      {
+        id: "basic-wash",
+        name: "Basic Wash",
+        price: 50,
+        includes: ["Exterior hand wash", "Rinse and dry", "Basic tire cleaning", "Window cleaning"]
+      },
+      {
+        id: "premium-wash",
+        name: "Premium Wash",
+        price: 80,
+        includes: ["Foam cannon wash", "Hand dry with microfiber", "Wheel cleaning", "Tire dressing", "Interior wipe-down"]
+      },
+      {
+        id: "deluxe-wash",
+        name: "Deluxe Wash",
+        price: 120,
+        includes: ["Premium wash features", "Quick wax application", "Interior vacuum", "Dashboard cleaning", "Air freshener"]
+      }
+    ],
+    additionalServices: [
+      { id: "wax", name: "Wax Application", price: 30 },
+      { id: "tire-shine", name: "Tire Shine", price: 20 },
+      { id: "interior-vacuum", name: "Interior Vacuum", price: 25 }
+    ]
   }
 ];
 
@@ -160,6 +190,58 @@ export const timeSlots = ["9:00 AM - 11:00 AM", "11:00 AM - 1:00 PM", "1:00 PM -
 
 export const mainServices = [
   {
+    id: "ceramic-coating",
+    name: "Ceramic Coating",
+    description: "Long-lasting paint protection with ceramic technology",
+    packages: [
+      {
+        id: "basic-coating",
+        name: "Basic Coating",
+        price: 300,
+        description: "1-year ceramic coating protection",
+        includes: [
+          "Surface preparation",
+          "1-layer ceramic coating",
+          "1-year protection",
+          "Basic gloss enhancement",
+          "Water beading effect"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "premium-coating",
+        name: "Premium Coating",
+        price: 500,
+        description: "3-year professional ceramic coating",
+        includes: [
+          "Full paint correction",
+          "2-layer ceramic coating",
+          "3-year protection",
+          "High gloss finish",
+          "Chemical resistance",
+          "Professional application"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "signature-coating",
+        name: "Signature Coating",
+        price: 800,
+        description: "5-year premium ceramic coating with warranty",
+        includes: [
+          "Multi-stage paint correction",
+          "3-layer ceramic coating",
+          "5-year warranty",
+          "Maximum gloss enhancement",
+          "Scratch resistance",
+          "Professional certification",
+          "Maintenance kit included"
+        ],
+        pricingType: "fixed"
+      }
+    ]
+  },
+  {
     id: "window-tinting",
     name: "Window Tinting",
     description: "Professional window tinting services for all vehicle types",
@@ -171,7 +253,7 @@ export const mainServices = [
         description: "Standard window film with UV protection",
         includes: [
           "Side windows tinting",
-          "Basic UV protection", 
+          "Basic UV protection",
           "1-year warranty",
           "Professional installation"
         ],
@@ -199,7 +281,7 @@ export const mainServices = [
         includes: [
           "All windows + windshield strip",
           "Maximum heat rejection",
-          "100% UV protection", 
+          "100% UV protection",
           "Lifetime warranty",
           "Professional installation",
           "Water spot resistance"
@@ -209,52 +291,52 @@ export const mainServices = [
     ]
   },
   {
-    id: "ceramic-coating",
-    name: "Ceramic Coating",
-    description: "Long-lasting paint protection with ceramic technology",
+    id: "interior-detailing",
+    name: "Interior Detailing",
+    description: "Deep cleaning and protection for your vehicle's interior",
     packages: [
       {
-        id: "basic-coating",
-        name: "Basic Coating",
+        id: "basic-interior",
+        name: "Basic Interior",
+        price: 100,
+        description: "Essential interior cleaning package",
+        includes: [
+          "Complete vacuuming",
+          "Dashboard cleaning",
+          "Door panel cleaning",
+          "Window cleaning",
+          "Basic upholstery cleaning"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "premium-interior",
+        name: "Premium Interior",
+        price: 180,
+        description: "Deep interior cleaning and conditioning",
+        includes: [
+          "Deep vacuuming all areas",
+          "Leather/vinyl conditioning",
+          "Carpet shampooing",
+          "Headliner cleaning",
+          "Vent cleaning",
+          "Odor elimination"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "complete-interior",
+        name: "Complete Interior",
         price: 300,
-        description: "1-year ceramic coating protection",
+        description: "Full interior restoration and protection",
         includes: [
-          "Surface preparation",
-          "1-layer ceramic coating",
-          "1-year protection",
-          "Basic gloss enhancement",
-          "Water beading effect"
-        ],
-        pricingType: "fixed"
-      },
-      {
-        id: "premium-coating",
-        name: "Premium Coating",
-        price: 500,
-        description: "3-year professional ceramic coating",
-        includes: [
-          "Full paint correction",
-          "2-layer ceramic coating", 
-          "3-year protection",
-          "High gloss finish",
-          "Chemical resistance",
-          "Professional application"
-        ],
-        pricingType: "fixed"
-      },
-      {
-        id: "signature-coating",
-        name: "Signature Coating",
-        price: 800,
-        description: "5-year premium ceramic coating with warranty",
-        includes: [
-          "Multi-stage paint correction",
-          "3-layer ceramic coating",
-          "5-year warranty",
-          "Maximum gloss enhancement",
-          "Scratch resistance",
-          "Professional certification",
-          "Maintenance kit included"
+          "Complete deep cleaning",
+          "Leather treatment",
+          "Carpet extraction",
+          "Fabric protection",
+          "AC vent sanitization",
+          "Interior ceramic coating",
+          "Odor neutralization"
         ],
         pricingType: "fixed"
       }
@@ -362,52 +444,37 @@ export const mainServices = [
     ]
   },
   {
-    id: "interior-detailing",
-    name: "Interior Detailing", 
-    description: "Deep cleaning and protection for your vehicle's interior",
+    id: "full-detailing",
+    name: "Full Detailing",
+    description: "Complete interior and exterior detailing services",
     packages: [
       {
-        id: "basic-interior",
-        name: "Basic Interior",
-        price: 100,
-        description: "Essential interior cleaning package",
+        id: "suv-full-basic",
+        name: "SUV Basic Full",
+        price: 220,
+        description: "Basic full detailing for SUVs",
         includes: [
-          "Complete vacuuming",
-          "Dashboard cleaning",
-          "Door panel cleaning",
-          "Window cleaning",
-          "Basic upholstery cleaning"
+          "Basic Interior + Basic Exterior Packages"
         ],
         pricingType: "fixed"
       },
       {
-        id: "premium-interior",
-        name: "Premium Interior",
-        price: 180,
-        description: "Deep interior cleaning and conditioning",
-        includes: [
-          "Deep vacuuming all areas",
-          "Leather/vinyl conditioning",
-          "Carpet shampooing",
-          "Headliner cleaning",
-          "Vent cleaning",
-          "Odor elimination"
-        ],
-        pricingType: "fixed"
-      },
-      {
-        id: "complete-interior",
-        name: "Complete Interior",
+        id: "suv-full-premium",
+        name: "SUV Premium Full",
         price: 300,
-        description: "Full interior restoration and protection",
+        description: "Premium full detailing for SUVs",
         includes: [
-          "Complete deep cleaning",
-          "Leather treatment",
-          "Carpet extraction",
-          "Fabric protection",
-          "AC vent sanitization",
-          "Interior ceramic coating",
-          "Odor neutralization"
+          "Premium Interior + Premium Exterior Packages"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "sedan-full-premium",
+        name: "Sedan Premium Full",
+        price: 310,
+        description: "Premium full detailing for Sedans",
+        includes: [
+          "Premium Interior + Premium Exterior Packages"
         ],
         pricingType: "fixed"
       }
