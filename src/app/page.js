@@ -11,6 +11,8 @@ import ExperienceStats from "@/components/ExperienceStats";
 import AboutStory from "@/components/AboutStory";
 import MissionVision from "@/components/MissionVision";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import BookingForm from "@/components/BookingForm";
+import Cards from "@/components/Cards";
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -27,6 +29,25 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Sample data for testing Cards component
+  const sampleCardsData = [
+    {
+      title: "Ceramic Coating",
+      description: "Protect your car's paint with our premium ceramic coating service.",
+      image: "/images/ceramic-coating.jpg", // Placeholder image path
+    },
+    {
+      title: "Window Tint",
+      description: "Enhance privacy and reduce heat with professional window tinting.",
+      image: "/images/window-tint.jpg",
+    },
+    {
+      title: "Interior Detailing",
+      description: "Deep clean and restore your car's interior to showroom condition.",
+      image: "/images/interior-detailing.jpg",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -40,6 +61,14 @@ export default function Home() {
           <PackageServices />
           <CustomerFeedback />
           <ExperienceStats />
+        </section>
+
+        {/* Test Cards Component */}
+        <section className="py-16 px-6 bg-gray-900">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-white mb-8">Test Cards Component</h2>
+            <Cards data={sampleCardsData} columns={3} />
+          </div>
         </section>
 
         {/* About Page Sections */}
@@ -110,8 +139,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <ContactForm />
+            {/* Booking Form */}
+            <BookingForm />
           </div>
         </section>
       </main>
@@ -142,128 +171,4 @@ export default function Home() {
   );
 }
 
-// Contact Form Component
-function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    webName: "Spark Ride"
-  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      const response = await fetch("https://car-detailling-dashboard.vercel.app/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-          webName: "Spark Ride"
-        });
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="bg-[var(--dark-bg-2)] border border-gray-700 rounded-2xl p-8 space-y-6">
-      {/* Status Messages */}
-      {submitStatus === "success" && (
-        <div className="bg-green-900/20 border border-green-500 text-green-400 px-4 py-3 rounded">
-          Thank you for your message! We'll get back to you soon.
-        </div>
-      )}
-
-      {submitStatus === "error" && (
-        <div className="bg-red-900/20 border border-red-500 text-red-400 px-4 py-3 rounded">
-          Sorry, there was an error sending your message. Please try again.
-        </div>
-      )}
-
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-[var(--white-color)] mb-1">
-          Full Name *
-        </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Enter your name"
-          className="w-full border border-gray-600 rounded-lg px-4 py-2 bg-[var(--dark-bg-1)] text-[var(--white-color)] focus:ring-2 focus:ring-[var(--text-color)] focus:outline-none"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-[var(--white-color)] mb-1">
-          Email Address *
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Enter your email"
-          className="w-full border border-gray-600 rounded-lg px-4 py-2 bg-[var(--dark-bg-1)] text-[var(--white-color)] focus:ring-2 focus:ring-[var(--text-color)] focus:outline-none"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-[var(--white-color)] mb-1">
-          Message *
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={5}
-          required
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Write your message..."
-          className="w-full border border-gray-600 rounded-lg px-4 py-2 bg-[var(--dark-bg-1)] text-[var(--white-color)] focus:ring-2 focus:ring-[var(--text-color)] focus:outline-none"
-        ></textarea>
-      </div>
-
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="w-full bg-[var(--text-color)] hover:bg-[var(--text-color)]/80 disabled:bg-gray-600 text-black font-semibold py-2 rounded-lg transition"
-      >
-        {isSubmitting ? "Sending..." : "Send Message"}
-      </button>
-    </form>
-  );
-}

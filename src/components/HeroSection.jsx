@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import SedanCarDetailing from "@/app/images/SedanCarDetailing.jpeg";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -49,9 +50,11 @@ export default function HeroSection() {
           transition={{ delay: 1.5, duration: 0.8 }}
           className="mt-12 flex flex-col sm:flex-row gap-4"
         >
+          <Link href="/bookingform">
           <Button size="lg" className="bg-[var(--text-color)] text-white rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--text-color)]">
             Book Now
           </Button>
+          </Link>
           <Button variant="outline" size="lg" className="rounded-full transition-all duration-300 hover:scale-105 text-[var(--charcoal-bg)]">
             View Our Services
           </Button>
