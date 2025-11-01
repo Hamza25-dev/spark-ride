@@ -1,12 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/app/components/ui/button';
+import { Card, CardContent } from '@/app/components/ui/card';
 import Link from 'next/link';
 import bookingData from '@/data/bookingData.json';
 import CarWindowTinting from '@/app/images/CarWindowTinting.jpg';
-import WindowTintingBefore from '@/app/images/WindowTintingBefore.png';
-import WindowTintingAfter from '@/app/images/WindowTintingAfter.png';
 import TintedAutoGlass from '@/app/images/TintedAutoGlass.jpg';
 import TintedAutoGlass2 from '@/app/images/TintedAutoGlass2.jpg';
 import TintGlassWindow from '@/app/images/TintGlassWindow.jpeg';

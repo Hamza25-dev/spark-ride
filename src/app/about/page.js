@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { ShieldCheck, Car, Wrench, Star } from "lucide-react";
-import AboutStory from "@/components/AboutStory";
-import MissionVision from "@/components/MissionVision";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import AboutStory from "@/app/components/AboutStory";
+import MissionVision from "@/app/components/MissionVision";
+import WhyChooseUs from "@/app/components/WhyChooseUs";
 
 export default function About() {
   return (

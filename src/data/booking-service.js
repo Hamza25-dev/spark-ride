@@ -1,86 +1,88 @@
 export const serviceTypes = [
   {
-    id: "car-detailing",
-    name: "Car Detailing",
-    vehicleTypes: ["sedan", "suv", "truck", "van"],
-    variants: [
-      {
-        id: "sedan",
-        name: "Sedan",
-        vehicleTypes: ["sedan"],
-        packages: [
-          { id: "sedan-interior-basic", name: "Basic Interior", price: 190, includes: ["Vacuum Carpets & Floor Mats", "Wipe Down Dashboard, Console & Cupholders", "Clean Windows (Inside)", "Clean Door Panels & Pockets", "Light Dusting", "Air Freshener"] },
-          { id: "sedan-interior-premium", name: "Premium Interior", price: 230, includes: ["Full Vacuum Carpets, Mats & Seats", "Shampoo & Deep Clean Upholstery + Carpets", "Leather/Vinyl Cleaning & Conditioning", "Dashboard, Console & Trim Detailed", "Interior Windows & Mirrors", "Door Panels & Cupholders Sanitized", "Odor Elimination"] },
-          { id: "sedan-exterior-basic", name: "Basic Exterior", price: 170, includes: ["Biodegradable Soap Wash", "Rinse & Pressure Clean", "Hand Dry with Microfiber Towels", "Clean Windows & Mirrors (Outside)", "Basic Tire Shine"] },
-          { id: "sedan-exterior-premium", name: "Premium Exterior", price: 200, includes: ["Foam Cannon Wash", "Clay Bar Treatment", "Hand Wax/Sealant", "Windows & Mirrors Polished", "Wheel & Tire Deep Cleaning + Shine", "Bug & Tar Removal"] },
-          { id: "sedan-full-basic", name: "Basic Full", price: 230, includes: ["Basic Interior + Basic Exterior Packages"] },
-          { id: "sedan-full-premium", name: "Premium Full", price: 310, includes: ["Premium Interior + Premium Exterior Packages"] }
-        ],
-        additionalServices: [
-          { id: "odor_removal", name: "Odor Removal", price: 50 },
-          { id: "pet_hair", name: "Pet Hair Removal", price: 40 },
-          { id: "engine_cleaning", name: "Engine Cleaning", price: 70 },
-          { id: "headlight_restore", name: "Headlight Restoration", price: 60 }
-        ]
-      },
-      {
-        id: "suv",
-        name: "SUV",
-        vehicleTypes: ["suv"],
-        packages: [
-          { id: "suv-interior-basic", name: "Basic Interior", price: 180, includes: ["Vacuum Carpets & Floor Mats", "Wipe Down Dashboard, Console & Cupholders", "Clean Windows (Inside)", "Clean Door Panels & Pockets", "Light Dusting", "Air Freshener"] },
-          { id: "suv-interior-premium", name: "Premium Interior", price: 220, includes: ["Full Vacuum Carpets, Mats & Seats", "Shampoo & Deep Clean Upholstery + Carpets", "Leather/Vinyl Cleaning & Conditioning", "Dashboard, Console & Trim Detailed", "Interior Windows & Mirrors", "Door Panels & Cupholders Sanitized", "Odor Elimination"] },
-          { id: "suv-exterior-basic", name: "Basic Exterior", price: 160, includes: ["Biodegradable Soap Wash", "Rinse & Pressure Clean", "Hand Dry with Microfiber Towels", "Clean Windows & Mirrors (Outside)", "Basic Tire Shine"] },
-          { id: "suv-exterior-premium", name: "Premium Exterior", price: 190, includes: ["Foam Cannon Wash", "Clay Bar Treatment", "Hand Wax/Sealant", "Windows & Mirrors Polished", "Wheel & Tire Deep Cleaning + Shine", "Bug & Tar Removal"] },
-          { id: "suv-full-basic", name: "Basic Full", price: 220, includes: ["Basic Interior + Basic Exterior Packages"] },
-          { id: "suv-full-premium", name: "Premium Full", price: 300, includes: ["Premium Interior + Premium Exterior Packages"] }
-        ],
-        additionalServices: [
-          { id: "odor_removal", name: "Odor Removal", price: 50 },
-          { id: "pet_hair", name: "Pet Hair Removal", price: 40 },
-          { id: "engine_cleaning", name: "Engine Cleaning", price: 70 },
-          { id: "headlight_restore", name: "Headlight Restoration", price: 60 }
-        ]
-      },
-      {
-        id: "truck",
-        name: "Truck",
-        vehicleTypes: ["truck"],
-        packages: [
-          { id: "truck-interior-basic", name: "Basic Interior", price: 180, includes: ["Vacuum Carpets & Floor Mats", "Wipe Down Dashboard, Console & Cupholders", "Clean Windows (Inside)", "Clean Door Panels & Pockets", "Light Dusting", "Air Freshener"] },
-          { id: "truck-interior-premium", name: "Premium Interior", price: 220, includes: ["Full Vacuum Carpets, Mats & Seats", "Shampoo & Deep Clean Upholstery + Carpets", "Leather/Vinyl Cleaning & Conditioning", "Dashboard, Console & Trim Detailed", "Interior Windows & Mirrors", "Door Panels & Cupholders Sanitized", "Odor Elimination"] },
-          { id: "truck-exterior-basic", name: "Basic Exterior", price: 190, includes: ["Biodegradable Soap Wash", "Rinse & Pressure Clean", "Hand Dry with Microfiber Towels", "Clean Windows & Mirrors (Outside)", "Basic Tire Shine"] },
-          { id: "truck-exterior-premium", name: "Premium Exterior", price: 210, includes: ["Foam Cannon Wash", "Clay Bar Treatment", "Hand Wax/Sealant", "Windows & Mirrors Polished", "Wheel & Tire Deep Cleaning + Shine", "Bug & Tar Removal"] },
-          { id: "truck-full-basic", name: "Basic Full", price: 250, includes: ["Basic Interior + Basic Exterior Packages"] },
-          { id: "truck-full-premium", name: "Premium Full", price: 320, includes: ["Premium Interior + Premium Exterior Packages"] }
-        ],
-        additionalServices: [
-          { id: "odor_removal", name: "Odor Removal", price: 50 },
-          { id: "pet_hair", name: "Pet Hair Removal", price: 40 },
-          { id: "engine_cleaning", name: "Engine Cleaning", price: 70 },
-          { id: "headlight_restore", name: "Headlight Restoration", price: 60 }
-        ]
-      },
-      {
-        id: "van",
-        name: "Van",
-        vehicleTypes: ["van"],
-        packages: [
-          { id: "van-interior-basic", name: "Basic Interior", price: 210, includes: ["Vacuum Carpets & Floor Mats", "Wipe Down Dashboard, Console & Cupholders", "Clean Windows (Inside)", "Clean Door Panels & Pockets", "Light Dusting", "Air Freshener"] },
-          { id: "van-interior-premium", name: "Premium Interior", price: 240, includes: ["Full Vacuum Carpets, Mats & Seats", "Shampoo & Deep Clean Upholstery + Carpets", "Leather/Vinyl Cleaning & Conditioning", "Dashboard, Console & Trim Detailed", "Interior Windows & Mirrors", "Door Panels & Cupholders Sanitized", "Odor Elimination"] },
-          { id: "van-exterior-basic", name: "Basic Exterior", price: 190, includes: ["Biodegradable Soap Wash", "Rinse & Pressure Clean", "Hand Dry with Microfiber Towels", "Clean Windows & Mirrors (Outside)", "Basic Tire Shine"] },
-          { id: "van-exterior-premium", name: "Premium Exterior", price: 240, includes: ["Foam Cannon Wash", "Clay Bar Treatment", "Hand Wax/Sealant", "Windows & Mirrors Polished", "Wheel & Tire Deep Cleaning + Shine", "Bug & Tar Removal"] },
-          { id: "van-full-basic", name: "Basic Full", price: 220, includes: ["Basic Interior + Basic Exterior Packages"] },
-          { id: "van-full-premium", name: "Premium Full", price: 300, includes: ["Premium Interior + Premium Exterior Packages"] }
-        ],
-        additionalServices: [
-          { id: "odor_removal", name: "Odor Removal", price: 50 },
-          { id: "pet_hair", name: "Pet Hair Removal", price: 40 },
-          { id: "engine_cleaning", name: "Engine Cleaning", price: 70 },
-          { id: "headlight_restore", name: "Headlight Restoration", price: 60 }
-        ]
-      }
+    id: "sedan-detailing",
+    name: "Sedan Detailing",
+    vehicleTypes: ["sedan"],
+    packages: [
+      { id: "sedan-interior-basic", name: "Basic Interior", price: 190, includes: ["Vacuum Carpets & Floor Mats", "Wipe Down Dashboard, Console & Cupholders", "Clean Windows (Inside)", "Clean Door Panels & Pockets", "Light Dusting", "Air Freshener"] },
+      { id: "sedan-interior-premium", name: "Premium Interior", price: 230, includes: ["Full Vacuum Carpets, Mats & Seats", "Shampoo & Deep Clean Upholstery + Carpets", "Leather/Vinyl Cleaning & Conditioning", "Dashboard, Console & Trim Detailed", "Interior Windows & Mirrors", "Door Panels & Cupholders Sanitized", "Odor Elimination"] },
+      { id: "sedan-exterior-basic", name: "Basic Exterior", price: 170, includes: ["Biodegradable Soap Wash", "Rinse & Pressure Clean", "Hand Dry with Microfiber Towels", "Clean Windows & Mirrors (Outside)", "Basic Tire Shine"] },
+      { id: "sedan-exterior-premium", name: "Premium Exterior", price: 200, includes: ["Foam Cannon Wash", "Clay Bar Treatment", "Hand Wax/Sealant", "Windows & Mirrors Polished", "Wheel & Tire Deep Cleaning + Shine", "Bug & Tar Removal"] },
+      { id: "sedan-full-basic", name: "Basic Full", price: 230, includes: ["Basic Interior + Basic Exterior Packages"] },
+      { id: "sedan-full-premium", name: "Premium Full", price: 310, includes: ["Premium Interior + Premium Exterior Packages"] }
+    ],
+    additionalServices: [
+      { id: "odor_removal", name: "Odor Removal", price: 50 },
+      { id: "pet_hair", name: "Pet Hair Removal", price: 40 },
+      { id: "engine_cleaning", name: "Engine Cleaning", price: 70 },
+      { id: "headlight_restore", name: "Headlight Restoration", price: 60 }
     ]
+  },
+  {
+    id: "suv-detailing",
+    name: "SUV Detailing",
+    vehicleTypes: ["suv"],
+    packages: [
+      { id: "suv-interior-basic", name: "Basic Interior", price: 180, includes: ["Vacuum Carpets & Floor Mats", "Wipe Down Dashboard, Console & Cupholders", "Clean Windows (Inside)", "Clean Door Panels & Pockets", "Light Dusting", "Air Freshener"] },
+      { id: "suv-interior-premium", name: "Premium Interior", price: 220, includes: ["Full Vacuum Carpets, Mats & Seats", "Shampoo & Deep Clean Upholstery + Carpets", "Leather/Vinyl Cleaning & Conditioning", "Dashboard, Console & Trim Detailed", "Interior Windows & Mirrors", "Door Panels & Cupholders Sanitized", "Odor Elimination"] },
+      { id: "suv-exterior-basic", name: "Basic Exterior", price: 160, includes: ["Biodegradable Soap Wash", "Rinse & Pressure Clean", "Hand Dry with Microfiber Towels", "Clean Windows & Mirrors (Outside)", "Basic Tire Shine"] },
+      { id: "suv-exterior-premium", name: "Premium Exterior", price: 190, includes: ["Foam Cannon Wash", "Clay Bar Treatment", "Hand Wax/Sealant", "Windows & Mirrors Polished", "Wheel & Tire Deep Cleaning + Shine", "Bug & Tar Removal"] },
+      { id: "suv-full-basic", name: "Basic Full", price: 220, includes: ["Basic Interior + Basic Exterior Packages"] },
+      { id: "suv-full-premium", name: "Premium Full", price: 300, includes: ["Premium Interior + Premium Exterior Packages"] }
+    ],
+    additionalServices: [
+      { id: "odor_removal", name: "Odor Removal", price: 50 },
+      { id: "pet_hair", name: "Pet Hair Removal", price: 40 },
+      { id: "engine_cleaning", name: "Engine Cleaning", price: 70 },
+      { id: "headlight_restore", name: "Headlight Restoration", price: 60 }
+    ]
+  },
+  {
+    id: "truck-detailing",
+    name: "Truck Detailing",
+    vehicleTypes: ["truck"],
+    packages: [
+      { id: "truck-interior-basic", name: "Basic Interior", price: 180, includes: ["Vacuum Carpets & Floor Mats", "Wipe Down Dashboard, Console & Cupholders", "Clean Windows (Inside)", "Clean Door Panels & Pockets", "Light Dusting", "Air Freshener"] },
+      { id: "truck-interior-premium", name: "Premium Interior", price: 220, includes: ["Full Vacuum Carpets, Mats & Seats", "Shampoo & Deep Clean Upholstery + Carpets", "Leather/Vinyl Cleaning & Conditioning", "Dashboard, Console & Trim Detailed", "Interior Windows & Mirrors", "Door Panels & Cupholders Sanitized", "Odor Elimination"] },
+      { id: "truck-exterior-basic", name: "Basic Exterior", price: 190, includes: ["Biodegradable Soap Wash", "Rinse & Pressure Clean", "Hand Dry with Microfiber Towels", "Clean Windows & Mirrors (Outside)", "Basic Tire Shine"] },
+      { id: "truck-exterior-premium", name: "Premium Exterior", price: 210, includes: ["Foam Cannon Wash", "Clay Bar Treatment", "Hand Wax/Sealant", "Windows & Mirrors Polished", "Wheel & Tire Deep Cleaning + Shine", "Bug & Tar Removal"] },
+      { id: "truck-full-basic", name: "Basic Full", price: 250, includes: ["Basic Interior + Basic Exterior Packages"] },
+      { id: "truck-full-premium", name: "Premium Full", price: 320, includes: ["Premium Interior + Premium Exterior Packages"] }
+    ],
+    additionalServices: [
+      { id: "odor_removal", name: "Odor Removal", price: 50 },
+      { id: "pet_hair", name: "Pet Hair Removal", price: 40 },
+      { id: "engine_cleaning", name: "Engine Cleaning", price: 70 },
+      { id: "headlight_restore", name: "Headlight Restoration", price: 60 }
+    ]
+  },
+  {
+    id: "van-detailing",
+    name: "Van Detailing",
+    vehicleTypes: ["van"],
+    packages: [
+      { id: "van-interior-basic", name: "Basic Interior", price: 210, includes: ["Vacuum Carpets & Floor Mats", "Wipe Down Dashboard, Console & Cupholders", "Clean Windows (Inside)", "Clean Door Panels & Pockets", "Light Dusting", "Air Freshener"] },
+      { id: "van-interior-premium", name: "Premium Interior", price: 240, includes: ["Full Vacuum Carpets, Mats & Seats", "Shampoo & Deep Clean Upholstery + Carpets", "Leather/Vinyl Cleaning & Conditioning", "Dashboard, Console & Trim Detailed", "Interior Windows & Mirrors", "Door Panels & Cupholders Sanitized", "Odor Elimination"] },
+      { id: "van-exterior-basic", name: "Basic Exterior", price: 190, includes: ["Biodegradable Soap Wash", "Rinse & Pressure Clean", "Hand Dry with Microfiber Towels", "Clean Windows & Mirrors (Outside)", "Basic Tire Shine"] },
+      { id: "van-exterior-premium", name: "Premium Exterior", price: 240, includes: ["Foam Cannon Wash", "Clay Bar Treatment", "Hand Wax/Sealant", "Windows & Mirrors Polished", "Wheel & Tire Deep Cleaning + Shine", "Bug & Tar Removal"] },
+      { id: "van-full-basic", name: "Basic Full", price: 220, includes: ["Basic Interior + Basic Exterior Packages"] },
+      { id: "van-full-premium", name: "Premium Full", price: 300, includes: ["Premium Interior + Premium Exterior Packages"] }
+    ],
+    additionalServices: [
+      { id: "odor_removal", name: "Odor Removal", price: 50 },
+      { id: "pet_hair", name: "Pet Hair Removal", price: 40 },
+      { id: "engine_cleaning", name: "Engine Cleaning", price: 70 },
+      { id: "headlight_restore", name: "Headlight Restoration", price: 60 }
+    ]
+  },
+  {
+    id: "bike-detailing",
+    name: "Bike Detailing",
+    vehicleTypes: ["bike"],
+    packages: [
+      { id: "bike-full", name: "Bike Full Detailing", price: 170, includes: ["Pressure Rinse Frame, Tank, Fenders", "..."] }
+    ],
+    additionalServices: []
   },
   {
     id: "boat-detailing",
@@ -105,11 +107,11 @@ export const serviceTypes = [
     additionalServices: []
   },
   {
-    id: "bike-detailing",
-    name: "Bike Detailing",
-    vehicleTypes: ["bike"],
+    id: "jetski-detailing",
+    name: "Jet Ski Detailing",
+    vehicleTypes: ["jetski"],
     packages: [
-      { id: "bike-full", name: "Bike Full Detailing", price: 170, includes: ["Pressure Rinse Frame, Tank, Fenders", "..."] }
+      { id: "jetski-full", name: "Jet Ski Full Detailing", price: 220, includes: ["Pressure Rinse Hull & Body", "..."] }
     ],
     additionalServices: []
   },
@@ -141,6 +143,141 @@ export const serviceTypes = [
       { id: "wax", name: "Wax Application", price: 30 },
       { id: "tire-shine", name: "Tire Shine", price: 20 },
       { id: "interior-vacuum", name: "Interior Vacuum", price: 25 }
+    ]
+  },
+  {
+    id: "ceramic-coating",
+    name: "Ceramic Coating",
+    packages: [
+      {
+        id: "basic-coating",
+        name: "Basic Coating",
+        price: 300,
+        description: "1-year ceramic coating protection",
+        includes: [
+          "Surface preparation",
+          "1-layer ceramic coating",
+          "1-year protection",
+          "Basic gloss enhancement",
+          "Water beading effect"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "premium-coating",
+        name: "Premium Coating",
+        price: 500,
+        description: "3-year professional ceramic coating",
+        includes: [
+          "Full paint correction",
+          "2-layer ceramic coating",
+          "3-year protection",
+          "High gloss finish",
+          "Chemical resistance",
+          "Professional application"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "signature-coating",
+        name: "Signature Coating",
+        price: 800,
+        description: "5-year premium ceramic coating with warranty",
+        includes: [
+          "Multi-stage paint correction",
+          "3-layer ceramic coating",
+          "5-year warranty",
+          "Maximum gloss enhancement",
+          "Scratch resistance",
+          "Professional certification",
+          "Maintenance kit included"
+        ],
+        pricingType: "fixed"
+      }
+    ]
+  },
+  {
+    id: "window-tinting",
+    name: "Window Tinting",
+    packages: [
+      {
+        id: "basic-tint",
+        name: "Basic Tint",
+        price: 150,
+        description: "Standard window film with UV protection",
+        includes: [
+          "Side windows tinting",
+          "Basic UV protection",
+          "1-year warranty",
+          "Professional installation"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "premium-tint",
+        name: "Premium Tint",
+        price: 250,
+        description: "High-quality ceramic window film",
+        includes: [
+          "All windows tinting",
+          "Ceramic heat rejection",
+          "99% UV protection",
+          "5-year warranty",
+          "Professional installation"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "luxury-tint",
+        name: "Luxury Tint",
+        price: 350,
+        description: "Premium ceramic tint with maximum heat rejection",
+        includes: [
+          "All windows + windshield strip",
+          "Maximum heat rejection",
+          "100% UV protection",
+          "Lifetime warranty",
+          "Professional installation",
+          "Water spot resistance"
+        ],
+        pricingType: "fixed"
+      }
+    ]
+  },
+  {
+    id: "full-detailing",
+    name: "Full Detailing",
+    packages: [
+      {
+        id: "suv-full-basic",
+        name: "SUV Basic Full",
+        price: 220,
+        description: "Basic full detailing for SUVs",
+        includes: [
+          "Basic Interior + Basic Exterior Packages"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "suv-full-premium",
+        name: "SUV Premium Full",
+        price: 300,
+        description: "Premium full detailing for SUVs",
+        includes: [
+          "Premium Interior + Premium Exterior Packages"
+        ],
+        pricingType: "fixed"
+      },
+      {
+        id: "sedan-full-premium",
+        name: "Sedan Premium Full",
+        price: 310,
+        description: "Premium full detailing for Sedans",
+        includes: [
+          "Premium Interior + Premium Exterior Packages"
+        ],
+        pricingType: "fixed"
+      }
     ]
   }
 ];

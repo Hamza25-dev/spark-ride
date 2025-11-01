@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import SedanCarDetailing from "@/app/images/SedanCarDetailing.jpeg";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 
 export default function HeroSection() {

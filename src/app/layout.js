@@ -1,6 +1,6 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/app/components/Navbar";
 import "./globals.css";
-import Footer from "@/components/Footer";
+import Footer from "@/app/components/Footer";
 
 export const metadata = {
   title: "Spark Ride",

@@ -1,13 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/app/components/ui/button';
+import { Card, CardContent } from '@/app/components/ui/card';
 import Link from 'next/link';
 import bookingData from '@/data/bookingData.json';
 import CeramicCoating from '@/app/images/CeramicCoating.jpg';
-import CeramicCoatingAfter from '@/app/images/CeramicCoatingAfter.png';
-import CeramicCoatingBefore from '@/app/images/CeramicCoatingBefore.png';
-import CeramicCoatingCar from '@/app/images/CeramicCoatingCar.jpg';
 import NanoCeramicCoating from '@/app/images/NanoCeramicCoating.jpeg';
 import ProfessionalCeramicCoating from '@/app/images/ProfessionalCeramicCoating.jpg';
 

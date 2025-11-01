@@ -1,18 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Navbar from "../components/Navbar";
-import HeroSection from "../components/HeroSection";
-import ServiceSection from "../components/ServiceSection";
-import AboutExperience from "@/components/AboutExperience";
-import PackageServices from "@/components/PackageServices";
-import {CustomerFeedback}  from "@/components/CustomerFeedback";
-import ExperienceStats from "@/components/ExperienceStats";
-import AboutStory from "@/components/AboutStory";
-import MissionVision from "@/components/MissionVision";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import BookingForm from "@/components/BookingForm";
-import Cards from "@/components/Cards";
+import Navbar from "@/app/components/Navbar";
+import HeroSection from "@/app/components/HeroSection";
+import ServiceSection from "@/app/components/ServiceSection";
+import AboutExperience from "@/app/components/AboutExperience";
+import PackageServices from "@/app/components/PackageServices";
+import {CustomerFeedback}  from "@/app/components/CustomerFeedback";
+import ExperienceStats from "@/app/components/ExperienceStats";
+import AboutStory from "@/app/components/AboutStory";
+import MissionVision from "@/app/components/MissionVision";
+import WhyChooseUs from "@/app/components/WhyChooseUs";
+import Cards from "@/app/components/Cards";
+import BookingForm from "@/app/bookingform/page";
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);

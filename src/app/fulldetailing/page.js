@@ -1,16 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/app/components/ui/button';
+import { Card, CardContent } from '@/app/components/ui/card';
 import Link from 'next/link';
 import { mainServices } from '@/data/booking-service';
 import CarDetailing from '@/app/images/CarDetailing.jpg';
-import CarDetailingAfter from '@/app/images/CarDetailingAfter.png';
-import CarDetailingBefore from '@/app/images/CarDetailingBefore.png';
 import SedanDetailingWash from '@/app/images/SedanDetailingWash.jpeg';
 import SUVDetailing from '@/app/images/SUVDetailing.jpeg';
-import InteriorCleaningAfter from '@/app/images/InteriorCleaningAfter.png';
-import InteriorCleaningBefore from '@/app/images/InteriorCleaningBefore.png';
+
 
 const FullDetailingPage = () => {
   const benefits = [
